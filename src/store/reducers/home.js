@@ -2,6 +2,7 @@ import * as types from "../types/home";
 
 let initialState = {
   price: 0,
+  customer: "",
 };
 
 export const homeReducer = (state = initialState, action) => {
