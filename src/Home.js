@@ -1,12 +1,13 @@
 import React from "react";
-import { batch, connect, useDispatch } from "react-redux";
+import { batch, connect } from "react-redux";
+// import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { setArtir } from "./store/action/home";
+// import { setArtir } from "./store/action/home";
 // import { store } from "./store";
 
 const Home = (props) => {
   const state = useSelector((state) => state);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   console.log(state);
 
   return (
@@ -24,8 +25,12 @@ const Home = (props) => {
   );
 };
 
-// const mapStateToProps = (state) => {
-//   return state;
-// };
+const mapStateToProps = (state) => {
+  return state;
+};
 
-export default connect()(Home);
+const mapDispatchtoProps=()=>{
+  return {setDispatchArtir:(num)dispatch(setArtir())}
+}
+
+export default connect(mapStateToProps, mapDispatchtoProps)(Home);
